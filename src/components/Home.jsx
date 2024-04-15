@@ -1,10 +1,19 @@
-function Home(){
+import "../css/home.css"
+import Poster from "./home/Poster"
+
+
+
+
+function Home() {
+
     return (
         <>
-            <h1>Home</h1> 
-            <div className="bg-danger" style={{width:"200px",height:"2000px"}}></div>
-            
+        {/* <h1>Home</h1> */}
+        
+        <Poster/>
         </>
     )
+
 }
 export default Home
+

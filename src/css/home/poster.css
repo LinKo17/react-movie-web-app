@@ -1,0 +1,96 @@
+/*
+ButtonContainer.jsx 's css contain in this file
+Tag.jsx 's css contain in this file
+*/
+.poster{
+    position: relative; 
+    z-index: 2;
+}
+
+.poster .image-container {
+    width:100%;
+    height: 100vh;
+}
+
+.poster .image-container img{
+    width:100%;
+    height: 100%;
+    opacity: 0.7;
+}
+
+.poster .post_word{
+    position: absolute;
+    top :100px;
+    left:90px;
+    width:400px;
+    opacity: 1;
+
+    background: transparent;
+    border:2px solid rgba(255, 255, 255, .1);
+    backdrop-filter:blur(20px);
+
+    border-radius: 10px;
+    padding:10px;
+
+}
+
+.poster .post_word h3{
+    font-family:var(---tertiary_font);
+}
+
+.poster .post_word .overview-container{
+    height:100px;
+    overflow: auto;
+    margin-bottom:10px;
+}
+.poster .post_word .overview-container p{
+    font-size: var(---primary_size);
+    font-family:var(---tertiary_font);
+}
+
+.poster .post_word .release_date{
+    font-size:13px;
+    opacity: 0.8;
+}
+
+.poster-button-group button{
+    border:none;
+    margin-right: 10px;
+    padding:10px;
+    border-radius: 10px;
+    color:white;
+}
+
+.poster-button-group button:hover{
+    opacity: 0.7;
+}
+.poster-button-group .poster-play-button{
+    background-color: var(---secondary_color);
+}
+
+.poster-button-group .poster-info-button{
+    background-color: gray;
+}
+
+
+
+.home-tags{
+    font-size:12px;
+    background-color: var(---secondary_color);
+    padding:3px;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    display: inline-block;
+}
+
+@media only screen and (max-width:1000px){
+    .poster .image-container{
+        height: auto;
+    }
+    .poster .post_word{
+        position: static;
+        width: 100%;
+        border-radius: none;
+    }
+}

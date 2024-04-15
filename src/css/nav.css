@@ -4,6 +4,7 @@
     backdrop-filter:blur(20px);
     position: sticky;
     top:0px;
+    z-index: 999;
 }
 
 .logo{
@@ -13,13 +14,13 @@
 }
 
 .menu-link{
-    color : var(---secondary_color);
+    color : var(---quaternary_color);
     font-size:var(---primary_size);
 }
 
 .menu-icon{
     display: none;
-    color : var(---secondary_color);
+    color : var(---quaternary_color);
     font-size:var(---secondary_size);
 }
 
@@ -37,7 +38,8 @@
 
 .menu-link:after{
     content: "";
-    background-color: #80ed99;
+    /* background-color: #80ed99; */
+    background-color: var(---secondary_color);
     width:0%;
     height: 3px;
     display: block;

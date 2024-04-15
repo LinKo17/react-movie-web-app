@@ -6,6 +6,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react"
 
 
+import Footer from "./Footer"
 function Nav() {
 
     let [mobile, setMobile] = useState(false)
@@ -15,7 +16,7 @@ function Nav() {
             <div className="navigation">
                 <div className="container d-flex justify-content-between">
 
-                    <div className="pt-1">
+                    <div className="">
                         <Link to="/" className="text-decoration-none fs-2">
                             <span className="logo">
                                 Nightflix
@@ -40,6 +41,9 @@ function Nav() {
                             <li className="menu-float p-4">
                                 <Link to="/fav" className="active text-decoration-none menu-link">Favourites</Link>
                             </li>
+                            <li className="menu-float p-4">
+                                <Link to="/contactus" className="active text-decoration-none menu-link">Contact Us</Link>
+                            </li>
 
                         </ul>
                     </div>
@@ -53,9 +57,11 @@ function Nav() {
                 </div>
             </div>
 
-            <div className="container">
+            <div className="">
                 {<Outlet />}
             </div>
+
+            <Footer/>
         </>
     )
 }

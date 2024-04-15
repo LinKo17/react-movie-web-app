@@ -1,29 +1,46 @@
+/* Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Dancing Script */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Oxygen:wght@300;400;700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
 
 :root{
     /* font */
-    ---primary_font : "Red Hat Display", sans-serif;
-    ---secondary_font : "Dancing Script", cursive;
+    ---primary_font : "Poppins", sans-serif;   /* main  */
+    ---secondary_font : "Dancing Script", cursive; /* logo */
+    ---tertiary_font : "Roboto Slab", serif; /* context */
 
     /* color */
-    ---primary_color :#171934;
-    ---secondary_color : #fca311;
+    ---primary_color :#000000;
+    /* ---secondary_color : #fca311; */
+    /* ---secondary_color : #fc3d1cff; */
+    ---secondary_color : #FF0000;
     ---tertiary_color : #0A58CA;
-    ---quaternary_color: "";
+    ---quaternary_color: #ffffff;
 
     /* rem */
-    ---primary_size : 1.2rem;
+    ---primary_size : 1.1rem;
     ---secondary_size : 2rem;
     ---tertiary_size :  3rem;
-    ---quaternary_size: 5rem;
+    ---quaternary_size: 1.4rem;
+
+    /* z-index */
+    ---primary_index : ;
+    ---secondary_index :2;
+    ---tertiary_color:5;
 }
 
 *{
     font-family: var(---primary_font);
+    /* font-family: var(---tertiary_font); */
 }
 
 body{
     background-color: var(---primary_color);
-    color:var(---secondary_color);
+    color:var(---quaternary_color);
+
 }
