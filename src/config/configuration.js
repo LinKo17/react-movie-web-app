@@ -10,16 +10,32 @@ const configuration  = {
         popular :"/popular?language=en-US",
         video:"/videos?language=en-US", //need movie id (video only)
         tags :"&append_to_response=videos",//need movie id (tag and video)
-        details : ""
+        top_rated : "/top_rated?language=en-US"
     },
 
-    series : {
-        series : "",
+    tv : {
+        tv : "/tv",
+        top_rated:"/top_rated?language=en-US"
     },
 
     image : {
         original : "https://image.tmdb.org/t/p/original/",
         w_500    : "https://image.tmdb.org/t/p/w500/"
+    },
+
+    trend: {
+        trending : "/trending",
+
+        all : "/all",
+        movie: "/movie",
+        tv : "/tv",
+        person : "/person",
+
+
+        day : "/day",
+        week : "/week",
+
+        others : "?language=en-US"
     }
 }
 

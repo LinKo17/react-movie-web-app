@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 
 function RatingCircle(props) {
 
-        let {rating} = props
+        let {rating,width,height,fs} = props
 
-        let [mainColor,setMainColor] = useState("red")
-        let [miniColor,setMiniColor] = useState("blue")
+
+        let [mainColor,setMainColor] = useState("#0077b6")
+        let [miniColor,setMiniColor] = useState("#00b4d8")
         
         
         useEffect(() => {
@@ -33,7 +34,7 @@ function RatingCircle(props) {
 
 
     return (
-        <div style={{ width: "50px", height: "50px" }} className="position-relative me-2">
+        <div style={{ width: `${width}`, height: `${height}`}} className="position-relative me-2">
             <Circle
                 percent={rating} // rating width
                 strokeColor={mainColor} //rating color
@@ -41,10 +42,11 @@ function RatingCircle(props) {
                 trailColor={miniColor} // other color
                 trailWidth={10}   // other think
                 strokeLinecap="round" // style
+                className="cic"
             />
 
             <div className="position-absolute top-50 start-50 translate-middle">
-                {rating}%
+                <span style={{fontSize: `${fs}`}}>{rating}%</span>
             </div>
 
         </div>

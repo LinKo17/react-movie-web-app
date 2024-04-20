@@ -1,0 +1,24 @@
+.more-grid{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+}
+
+
+
+@media only screen and (max-width: 1200px){
+    .more-grid{
+        grid-template-columns: repeat(5,1fr);
+    }
+} 
+
+@media only screen and (max-width: 992px){
+    .more-grid{
+        grid-template-columns: repeat(4,1fr);
+    }
+} 
+
+@media only screen and (max-width: 768px){
+    .more-grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+} 

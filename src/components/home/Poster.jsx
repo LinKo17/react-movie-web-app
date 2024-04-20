@@ -42,7 +42,7 @@ function Poster() {
                     // navigation={true} //left arrow and right arrow
                     //pagination={true}`` //pagination
                     mousewheel={true}
-                    keyboard={true} //keyboard
+                    //keyboard={true} //keyboard
                     autoplay={{
                         delay: 8000,
                         disableOnInteraction: false,
@@ -69,6 +69,8 @@ function Poster() {
 
                                             <RatingCircle
                                                 rating={Math.round((element.vote_average / 10) * 100)}
+                                                width={"50px"}
+                                                height={"50px"}
                                             />
 
 

@@ -8,6 +8,7 @@ import Series from "./components/Series"
 import Fav from "./components/Fav"
 import Error from "./components/Error"
 import Details from "./components/Details"
+import More from "./components/More"
 
 function App() {
   return (
@@ -19,9 +20,11 @@ function App() {
 
             <Route index element={<Home />} />
             <Route path="/movies" element={<Movies />} />
-            <Route path="/movies/:id/details" element={<Details/>}/>
+            <Route path="/:id/details" element={<Details/>}/>
             <Route path="/series" element={<Series />} />
             <Route path="/fav" element={<Fav />} />
+
+            <Route path="/more/:action" element={<More/>}/>
 
           </Route>
 

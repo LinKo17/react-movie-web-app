@@ -45,7 +45,7 @@ function ButtonContainer(props) {
 
             }
 
-            <Link to={`/movies/${id}/details`}>
+            <Link to={`/${id}/details`}>
                 <button className="poster-info-button">
                     <FontAwesomeIcon icon={faCircleInfo} /> More Info
                 </button>

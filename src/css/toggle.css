@@ -1,0 +1,52 @@
+.toggle-button-container{
+    font-size: 14px;
+    /* border:1px solid red;
+    background-color: blue; */
+    width:128px;
+    padding:6px;
+    border-radius: 100px;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+.toggle-day-button{
+    /* border:1px solid blue; */
+    width:57px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 100px;
+    position: relative;
+    z-index: 3;
+}
+.toggle-week-button{
+    /* border:1px solid green; */
+    width:57px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 100px;
+    position: relative;
+    z-index: 3;
+}
+.toggle-button-true{
+    background-color: red;
+    width:57px;
+
+    display: inline-block;
+    height: 27px;
+    border-radius: 100px;
+    position: absolute;
+    left:4px;
+    top:3px;
+    transition: all 1s;
+}
+.toggle-button-false{
+    background-color: red;
+    left:63px;
+    width:57px;
+    display: inline-block;
+    height: 27px;
+    border-radius: 100px;
+    position: absolute;
+    top:3px;
+    transition: all 1s;
+}

@@ -41,10 +41,6 @@ function Nav() {
                             <li className="menu-float p-4">
                                 <Link to="/fav" className="active text-decoration-none menu-link">Favourites</Link>
                             </li>
-                            <li className="menu-float p-4">
-                                <Link to="/contactus" className="active text-decoration-none menu-link">Contact Us</Link>
-                            </li>
-
                         </ul>
                     </div>
 
