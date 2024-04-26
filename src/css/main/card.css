@@ -5,6 +5,7 @@
     transition: all 0.3s;
     position: relative;
     top:0px;
+    user-select: none;
 }
 
 .rating-cyc-container{

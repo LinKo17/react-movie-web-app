@@ -15,6 +15,7 @@ const configuration  = {
 
     tv : {
         tv : "/tv",
+        popular :"/popular?language=en-US",
         top_rated:"/top_rated?language=en-US"
     },
 
@@ -36,7 +37,17 @@ const configuration  = {
         week : "/week",
 
         others : "?language=en-US"
+    },
+    genres:{
+        genre:"/genre",
+        movies : "/movie/list?language=en",
+        tv:"/tv/list?language=en"
+    },
+    discover:{
+        movie:"/discover/movie?with_genres=",
+        tv:"/discover/tv?with_genres="
     }
+    // https://api.themoviedb.org/3/discover/movie?with_genres=35&api_key=b4844965f36533bdaa743f9f5bb77237
 }
 
 export default configuration

@@ -16,7 +16,7 @@ function Trending() {
         setTrendTime(checkTime ? configuration.trend.day : configuration.trend.week)
     }, [checkTime, trendTime])
 
-    let { data, load } = useMultiple(configuration.trend.trending + configuration.trend.all + trendTime + configuration.trend.others)
+    let { data, load } = useMultiple(configuration.trend.trending + configuration.trend.all + trendTime + configuration.trend.others,trendTime)
 
 
     console.log(data)

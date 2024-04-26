@@ -35,7 +35,7 @@ function Nav() {
                             </li>
 
                             <li className="menu-float p-4">
-                                <Link to="/series" className="active text-decoration-none menu-link">Series</Link>
+                                <Link to="/tv" className="active text-decoration-none menu-link">Tv</Link>
                             </li>
 
                             <li className="menu-float p-4">

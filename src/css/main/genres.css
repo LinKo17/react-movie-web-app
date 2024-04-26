@@ -1,0 +1,28 @@
+.slider-tags{
+    background-color: #262626ff;
+    cursor: pointer;
+    margin-right:15px;
+    text-wrap: nowrap;
+    user-select: none;
+}
+.slider-tags:hover{
+    background-color: gray;
+}
+
+.slider-over{
+    overflow: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style:none;
+    scrollbar-width: none;
+}
+.slider-over::-webkit-scrollbar{
+    display: none;
+}
+.slider-active-tag{
+    background-color: white;
+    cursor: pointer;
+    margin-right:15px;
+    text-wrap: nowrap;
+    user-select: none; 
+    color:black; 
+}

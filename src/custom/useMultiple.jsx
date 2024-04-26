@@ -2,7 +2,7 @@ import { useState } from "react";
 import configuration from "../config/configuration.js"
 import { useEffect } from "react";
 
-const useMultiple = (extra = "") =>{
+const useMultiple = (extra = "",depan="") =>{
 
     let [data , setData] = useState([])
     let [load,setLoad] = useState(true)
@@ -28,7 +28,7 @@ const useMultiple = (extra = "") =>{
             setLoad(false)
         })
         .catch(error => error.message)
-    },[])
+    },[depan])
 
     return {data,load}
 }

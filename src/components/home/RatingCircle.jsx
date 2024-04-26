@@ -7,8 +7,8 @@ function RatingCircle(props) {
         let {rating,width,height,fs} = props
 
 
-        let [mainColor,setMainColor] = useState("#0077b6")
-        let [miniColor,setMiniColor] = useState("#00b4d8")
+        let [mainColor,setMainColor] = useState("black")
+        let [miniColor,setMiniColor] = useState("black")
         
         
         useEffect(() => {
