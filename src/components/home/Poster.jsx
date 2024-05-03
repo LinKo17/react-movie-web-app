@@ -60,7 +60,7 @@ function Poster() {
 
                                 <div className="post_word">
 
-                                    <h3>{element.original_title}</h3>
+                                    <h3>{element.title}</h3>
 
                                     <p className="release_date">{element.release_date}</p>
 
@@ -84,7 +84,7 @@ function Poster() {
                                         <p>{element.overview}</p>
                                     </div>
 
-                                    <ButtonContainer id={element.id} />
+                                    <ButtonContainer id={element.id} title={element.title}/>
 
                                 </div>
                             </SwiperSlide>

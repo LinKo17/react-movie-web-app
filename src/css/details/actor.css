@@ -1,0 +1,41 @@
+.actor-main-container{
+    display: flex;
+    overflow: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style:none;
+    scrollbar-width: none;
+    user-select: none;
+}
+.actor-main-container::-webkit-scrollbar{
+    display: none;
+}
+.actor-container{
+    margin-right: 15px;
+    
+}
+.image-box{
+    width:120px;
+}
+
+.image-box img{
+    width: 100%;
+    border-radius: 10px;
+}
+.original_name{
+    font-size:14px;
+    word-wrap: break-word;
+}
+.charactor_name{
+    font-size: 12px;
+    opacity: 0.5;
+    word-wrap: break-word;
+}
+@media(max-width:767px){
+    .image-box{
+        width:90px;
+    }
+    .actor-container{
+        margin-right: 10px;
+        
+    }
+}

@@ -6,50 +6,47 @@ import "../../css/main/card.css"
 import RatingCircle from "../home/RatingCircle"
 
 //image section
-import noposter from "../../assets/noo.svg"
-import CardSkeleton from "../skeleton/CardSkeleton"
+import noposter from "../../assets/noposter.png"
+
 function Card(props) {
     let element = props.element
-    console.log(element)
+
     return (
 
-        <Link to={`/${element.id}/details`} className="card-link">
+        <Link to={`/${element.id}/${element.title || element.name}`} className="card-link">
 
             {
-                element.poster_path ?
-                    <div className="card-box">
+                <div className="card-box">
 
-                        {
-                            element.vote_average != 0 ?
+                    {
+                        element.vote_average != 0 ?
 
-                                <div className="rating-cyc-container">
-                                    <RatingCircle
-                                        rating={Math.round((element.vote_average / 10) * 100)}
-                                        width={"40px"}
-                                        height={"40px"}
-                                        fs={"11px"}
-                                    />
-                                </div>
+                            <div className="rating-cyc-container">
+                                <RatingCircle
+                                    rating={Math.round((element.vote_average / 10) * 100)}
+                                    width={"40px"}
+                                    height={"40px"}
+                                    fs={"11px"}
+                                />
+                            </div>
 
-                                :
+                            :
 
-                                ""
+                            ""
 
-                        }
+                    }
 
-                        {
-                            element.poster_path != null ?
+                    {
+                        element.poster_path != null ?
 
-                                <img src={configuration.image.w_500 + element.poster_path} />
+                            <img src={configuration.image.w_500 + element.poster_path} />
 
-                                :
-                                <img src={noposter} />
-                        }
+                            :
+                            <img src={noposter} />
+                    }
 
-                        <p style={{ textDecoration: "none" }}>{element.title || element.name}</p>
-                    </div>
-                    :
-                    <CardSkeleton />
+                    <p style={{ textDecoration: "none" }}>{element.title || element.name}</p>
+                </div>
 
             }
 

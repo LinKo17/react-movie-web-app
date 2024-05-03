@@ -10,13 +10,16 @@ const configuration  = {
         popular :"/popular?language=en-US",
         video:"/videos?language=en-US", //need movie id (video only)
         tags :"&append_to_response=videos",//need movie id (tag and video)
-        top_rated : "/top_rated?language=en-US"
+        top_rated : "/top_rated?language=en-US",
+        similar:"/similar?language=en-US&page=1"//similar movies
     },
 
     tv : {
         tv : "/tv",
         popular :"/popular?language=en-US",
-        top_rated:"/top_rated?language=en-US"
+        top_rated:"/top_rated?language=en-US",
+        similar:"/similar?language=en-US&page=1",//similar movies
+        video:"/videos?language=en-US", //need movie id (video only)
     },
 
     image : {
@@ -46,8 +49,18 @@ const configuration  = {
     discover:{
         movie:"/discover/movie?with_genres=",
         tv:"/discover/tv?with_genres="
+    },
+    details:{
+       movie : "/movie/",
+       tv:"/tv/"
+    },
+    search :"/search/multi?language=en-US&page=1&query=",
+    actors :{
+        movie: "/movie",
+        tv: "/tv",
+        credits : "/credits"
     }
-    // https://api.themoviedb.org/3/discover/movie?with_genres=35&api_key=b4844965f36533bdaa743f9f5bb77237
+
 }
 
 export default configuration

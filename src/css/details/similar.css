@@ -1,0 +1,14 @@
+.similar-main-container{
+    display: flex;
+    overflow: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style:none;
+    scrollbar-width: none;
+    user-select: none;
+}
+.actor-main-container::-webkit-scrollbar{
+    display: none;
+}
+.simliar-card-box{
+    margin-right: 10px;
+}

@@ -4,7 +4,6 @@ import List from "../main/List"
 
 function All(){
     let {data,load} = useMultiple(configuration.tv.tv + configuration.tv.popular)
-    console.log(data)
     return (
         <List element={{ data, load }} />
     )

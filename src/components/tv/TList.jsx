@@ -5,7 +5,6 @@ import All from "./All"
 
 function TList({ genreId }) {
     let { data, load } = useMultiple(configuration.discover.tv + genreId, genreId)
-    console.log(data)
 
     return (
         <>

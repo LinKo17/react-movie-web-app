@@ -13,7 +13,7 @@ import { useEffect, useState } from "react"
 //https://api.themoviedb.org/3/movie/1011985/videos?language=en-US&api_key=b4844965f36533bdaa743f9f5bb77237
 
 function ButtonContainer(props) {
-    let { id } = props
+    let { id,title } = props
 
     let { data, load } = useMultiple(configuration.movies.movie + `/${id}` + configuration.movies.video)
 
@@ -45,7 +45,7 @@ function ButtonContainer(props) {
 
             }
 
-            <Link to={`/${id}/details`}>
+            <Link to={`/${id}/${title}`}>
                 <button className="poster-info-button">
                     <FontAwesomeIcon icon={faCircleInfo} /> More Info
                 </button>

@@ -1,0 +1,21 @@
+.youtube-video-container{
+    display: flex;
+    overflow: none;
+    overflow-y: scroll;
+    -ms-overflow-style:none;
+    scrollbar-width: none;
+    user-select: none;
+}
+.youtube-video-container div{
+    margin-right: 15px;
+}
+.youtube-video-container .iframe{
+    width:340px;
+    height: 340px;
+}
+@media(max-width:767px){
+    .youtube-video-container .iframe{
+        width:250px;
+        height: 250px;
+    }
+}
