@@ -19,7 +19,7 @@ function Card(props) {
                 <div className="card-box">
 
                     {
-                        element.vote_average != 0 ?
+                        element.vote_average != 0 && !isNaN(element.vote_average) ?
 
                             <div className="rating-cyc-container">
                                 <RatingCircle

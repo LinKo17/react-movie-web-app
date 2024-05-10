@@ -2,15 +2,14 @@ import { Outlet, Link } from "react-router-dom"
 import "../css/nav.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { useState } from "react"
+import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 import Footer from "./Footer"
+import { useState } from "react"
+
 function Nav() {
-
-    let [mobile, setMobile] = useState(false)
-
+    const [mobile, setMobile] = useState(false)
     return (
         <>
             <div className="navigation">
@@ -44,10 +43,22 @@ function Nav() {
                         </ul>
                     </div>
 
-                    <div className="p-3 menu-icon-box" >
+
+
+                    <div className="icon-container">
+
+                        <Link to="/search/" className="search-box">
+                            <FontAwesomeIcon icon={faSearch} />
+                        </Link>
+
+
+                        <div className="menu-icon-box" >
                             <Link onClick={() => setMobile(!mobile)} className="menu-icon">
                                 <FontAwesomeIcon icon={faBars} />
                             </Link>
+                        </div>
+
+
                     </div>
 
                 </div>
@@ -57,7 +68,7 @@ function Nav() {
                 {<Outlet />}
             </div>
 
-            <Footer/>
+            {/* <Footer /> */}
         </>
     )
 }

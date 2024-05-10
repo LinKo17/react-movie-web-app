@@ -1,0 +1,41 @@
+.input-container{
+    /* border:1px solid blue; */
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.input-container div{
+    position: relative;
+    /* border:1px solid red; */
+}
+.input-container div input{
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid gray;
+    outline: none;
+    padding: 5px;
+    padding-left: 27px;
+    color: white;
+    font-size: 15px;
+    font-family: var(---tertiary_font);
+    width: 320px;
+}
+.input-container div input:focus{
+    border-bottom: 1px solid white ;
+}
+.input-container div button{
+    border:none;
+    background-color: transparent;
+    color:gray;
+    cursor:none;
+    position: absolute;
+    left:0px;
+    top:5px;
+}
+.fou-con{
+    font-size:120px;
+    display: flex;
+    justify-content: center;
+    margin-top:50px;
+    opacity: 0.2;
+}
