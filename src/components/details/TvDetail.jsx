@@ -254,8 +254,10 @@ function TvDetail(props) {
 
                         </div>
 
-                        <div className="container mt-5">
-                            <TvActors id={data.id} action={"tv"} />
+                        <div className="container mt-5 data-container">
+                            <div className="actors-tag">
+                                <TvActors id={data.id} action={"tv"} />
+                            </div>
                             <TvYt id={data.id} />
                             <TvSimilar id={data.id} />
                         </div>

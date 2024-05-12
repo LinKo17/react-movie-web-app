@@ -114,3 +114,14 @@
         margin-top:10px;
     }
 }
+@media (max-width: 844px) and (max-height: 390px) {
+    .list-unstyled{
+        margin-top: 20px;
+    }
+}
+   
+@media (max-width: 600px) and (max-height: 340px) {
+    .list-unstyled{
+        margin-top: 20px;
+    }
+}

@@ -6,6 +6,7 @@
     position: relative;
     top:0px;
     user-select: none;
+    margin-right:1px ;
 }
 
 .rating-cyc-container{

@@ -45,7 +45,7 @@ function Card(props) {
                             <img src={noposter} />
                     }
 
-                    <p style={{ textDecoration: "none" }}>{element.title || element.name}</p>
+                    <p style={{ textDecoration: "none" }}>{(element.title || element.name)}</p>
                 </div>
 
             }

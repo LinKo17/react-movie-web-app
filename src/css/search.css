@@ -39,3 +39,10 @@
     margin-top:50px;
     opacity: 0.2;
 }
+@media(max-width:340px){
+
+    .input-container div input{
+        width: 280px;
+    }
+
+}

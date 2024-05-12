@@ -129,8 +129,10 @@ function MovieDetail(props) {
 
                         </div>
 
-                        <div className="container mt-5">
-                            <Actors id={data.id} action={"movie"} />
+                        <div className="container mt-5 data-container">
+                            <div className="actors-tag">
+                                <Actors id={data.id} action={"movie"} />
+                            </div>
                             <Yt id={data.id}/>
                             <Similar id={data.id} />
                         </div>
