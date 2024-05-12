@@ -26,7 +26,7 @@ function Search() {
         }
 
         setResult(currentValue)
-        currentValue = ""
+        // dataRef.current.value = " "
     }
 
     const { data, load } = useMultiple(configuration.search + result, result)

@@ -13,7 +13,7 @@ import MovieDetail from "./details/MovieDetail";
 function Details() {
     let { id, name } = useParams();
 
-    let [type, setType] = useState(null)
+    let [type, setType] = useState(0)
     let [correctId, setCorrectId] = useState(null)
 
     const { data, load } = useMultiple(configuration.search + name)
@@ -34,19 +34,20 @@ function Details() {
     return (
         <>
             {
-                type == null || type == undefined ?
-
+                type == 0 || type == undefined || type == null?
                     <>
                         {
-                            type == null ?
+                            type == 0 ?
 
-                                <div className="loading-style" >
-                                    <Loading />
-                                </div>
+                            <div className="loading-style" >
+                                <Loading/>
+                            </div>
                 
                             :
 
-                            <h2>We will upload later</h2>
+                            <div className="loading-style">
+                                <h1>Nothing</h1>
+                            </div>
 
                         }
                     </>

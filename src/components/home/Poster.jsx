@@ -52,42 +52,51 @@ function Poster() {
                 >
                     {result.map(element => {
                         return (
-                            <SwiperSlide key={element.id}>
+                            <div key={element.id}>
+                                {
+                                    element.backdrop_path == null ?
+                                        ""
+                                        :
 
-                                <div className="image-container">
-                                    <img src={configuration.image.original + element.backdrop_path} />
-                                </div>
+                                        <SwiperSlide key={element.id}>
 
-                                <div className="post_word">
+                                            <div className="image-container">
+                                                <img src={configuration.image.original + element.backdrop_path} />
+                                            </div>
 
-                                    <h3>{element.title}</h3>
+                                            <div className="post_word">
 
-                                    <p className="release_date">{element.release_date}</p>
+                                                <h3>{element.title}</h3>
 
-                                    <div className="d-flex">
+                                                <p className="release_date">{element.release_date}</p>
 
-
-                                            <RatingCircle
-                                                rating={Math.round((element.vote_average / 10) * 100)}
-                                                width={"50px"}
-                                                height={"50px"}
-                                            />
-
+                                                <div className="d-flex">
 
 
-                                            <Tag id={element.id} />
+                                                    <RatingCircle
+                                                        rating={Math.round((element.vote_average / 10) * 100)}
+                                                        width={"50px"}
+                                                        height={"50px"}
+                                                    />
 
 
-                                    </div>
 
-                                    <div className="overview-container mb-4">
-                                        <p>{element.overview}</p>
-                                    </div>
+                                                    <Tag id={element.id} />
 
-                                    <ButtonContainer id={element.id} title={element.title}/>
 
-                                </div>
-                            </SwiperSlide>
+                                                </div>
+
+                                                <div className="overview-container mb-4">
+                                                    <p>{element.overview}</p>
+                                                </div>
+
+                                                <ButtonContainer id={element.id} title={element.title} />
+
+                                            </div>
+                                        </SwiperSlide>
+                                }
+
+                            </div>
                         )
                     })}
 
