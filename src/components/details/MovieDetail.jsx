@@ -19,7 +19,7 @@ function MovieDetail(props) {
     let { id } = props
 
     let { data, load } = useMultiple(configuration.details.movie + id)
-    console.log(data)
+    // console.log(data)
     return (
         <>
 

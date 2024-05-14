@@ -10,15 +10,19 @@ import { useEffect } from "react"
 
 import { Link } from "react-router-dom"
 
+
+// redux section
+import { useSelector, useDispatch } from 'react-redux'
+import { addId } from "../../redux/favouriteSlice"
+
 function DetailButton(props) {
-    // console.log(props)
     let { id, title } = props
 
     let { data, load } = useMultiple(configuration.movies.movie + `/${id}` + configuration.movies.video)
 
     let [video, setVideo] = useState(0)
+    let [exit, setExit] = useState(false)
 
-    // console.log(data)
     useEffect(() => {
         if (!load) {
             let video = data.results
@@ -28,6 +32,24 @@ function DetailButton(props) {
             }
         }
     }, [data, load])
+
+    //redux section
+    const fav = useSelector((state) => state.fav.value)
+    const dispatch = useDispatch()
+
+
+    useEffect(() => {
+
+        let favourite = fav.find(e => e.id === id)
+
+        if(favourite){
+            setExit(true)
+        }else{
+            setExit(false)
+        }
+    })
+
+
 
     return (
         <div className="mt-3 mb-4 button-container">
@@ -46,11 +68,7 @@ function DetailButton(props) {
                         </Link>
                 }
 
-                {/* <button className="movie-detail-faPlay me-2">
-                    <FontAwesomeIcon icon={faPlay} />
-                </button> */}
-
-                <button className="movie-detail-faHeart me-2">
+                <button className={`me-2 ${exit ? "movie-detail-faHeart-exit" : "movie-detail-faHeart"}`} onClick={() => dispatch(addId(id))}>
                     <FontAwesomeIcon icon={faHeart} />
                 </button>
 
