@@ -26,12 +26,15 @@ export const favouriteSlice = createSlice({
         state.value = [{ id: action.payload },...state.value];
       }
       localStorage.setItem("favItemList", JSON.stringify(state.value));
+    },
+    removeId:(state,action) => {
+      state.value = action.payload
     }
 
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { addId, decrement, incrementByAmount } = favouriteSlice.actions
+export const { addId,removeId } = favouriteSlice.actions
 
 export default favouriteSlice.reducer

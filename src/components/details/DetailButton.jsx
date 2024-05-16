@@ -14,6 +14,7 @@ import { Link } from "react-router-dom"
 // redux section
 import { useSelector, useDispatch } from 'react-redux'
 import { addId } from "../../redux/favouriteSlice"
+import { addWatchId } from "../../redux/watchSlice"
 
 function DetailButton(props) {
     let { id, title } = props
@@ -22,6 +23,7 @@ function DetailButton(props) {
 
     let [video, setVideo] = useState(0)
     let [exit, setExit] = useState(false)
+    let [watchExit,setWatchExit] =useState(false)
 
     useEffect(() => {
         if (!load) {
@@ -35,17 +37,25 @@ function DetailButton(props) {
 
     //redux section
     const fav = useSelector((state) => state.fav.value)
+    const watch = useSelector(state => state.watch.value)
     const dispatch = useDispatch()
 
-
+    console.log(watch)
     useEffect(() => {
 
         let favourite = fav.find(e => e.id === id)
+        let watchlater = watch.find(e => e.id == id)
 
         if(favourite){
             setExit(true)
         }else{
             setExit(false)
+        }
+
+        if(watchlater){
+            setWatchExit(true)
+        }else{
+            setWatchExit(false)
         }
     })
 
@@ -72,7 +82,7 @@ function DetailButton(props) {
                     <FontAwesomeIcon icon={faHeart} />
                 </button>
 
-                <button className="movie-detail-faCartPlus">
+                <button className={watchExit ? "movie-detail-faCartPlus-exit" : "movie-detail-faCartPlus" } onClick={() => dispatch(addWatchId(id))}>
                     <FontAwesomeIcon icon={faFileCirclePlus} />
                 </button>
             </div>

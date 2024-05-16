@@ -55,7 +55,13 @@
     }
 } 
 
-@media only screen and (max-width: 320px){
+@media only screen and (max-width: 340px){
+    .card-skeleton{
+        width:110px;
+    }
+} 
+
+/* @media only screen and (max-width: 320px){
     .card-box{
         width:120px;
     }
@@ -65,4 +71,4 @@
         width:160px;
         height: 230px;
     }
-}
+} */

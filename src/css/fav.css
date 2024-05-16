@@ -1,0 +1,70 @@
+.fav-blade-style{
+    display: flex;
+    overflow: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style:none;
+    scrollbar-width: none;
+    user-select: none;
+}
+
+.fav-blade-style::-webkit-scrollbar{
+    display: none;
+}
+
+.fav-blade-style .fav-inner-blade-style{
+    margin-left:10px;
+}
+.delete-btn{
+    border:none;
+    background-color: transparent;
+    padding:0px;
+    margin:0px;
+}
+
+.confirm-con-up{
+    width:100%;
+    position: absolute;
+    top:-700px;
+    left:0px;
+    display: flex;
+    justify-content: center;
+    transition: all 1s;
+
+}
+
+.confirm-con-down{
+    width:100%;
+    position: absolute;
+    top:300px;
+    left:0px;
+    display: flex;
+    justify-content: center;
+    transition: all 1s;
+}
+.confirm-form{
+    color:white;
+    padding: 15px;
+    border-radius: 5px;
+    background: transparent;
+    border:2px solid rgba(255, 255, 255, .1);
+    backdrop-filter:blur(20px);
+    user-select: none;
+}
+
+.confrim-btn{
+    margin-top:10px;
+}
+.con-btn{
+    display: inline-block;
+    padding:10px;
+    border:none;
+    border-radius: 10px;
+    margin-right: 10px;
+    color:white;
+}
+.con-yes{
+    background-color: #0a67c4ff;
+}
+.con-no{
+    background-color: #AF2A36;
+}
