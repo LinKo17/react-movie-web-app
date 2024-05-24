@@ -40,7 +40,6 @@ function DetailButton(props) {
     const watch = useSelector(state => state.watch.value)
     const dispatch = useDispatch()
 
-    console.log(watch)
     useEffect(() => {
 
         let favourite = fav.find(e => e.id === id)
