@@ -8,6 +8,10 @@
 .slider-tags:hover{
     background-color: gray;
 }
+.slider-tags .slider-tags-link{
+    text-decoration: none;
+    color:white;
+}
 
 .slider-over{
     overflow: hidden;
@@ -25,4 +29,8 @@
     text-wrap: nowrap;
     user-select: none; 
     color:black; 
+}
+.slider-active-tag .slider-tags-link{
+    color:black;
+    text-decoration: none;
 }

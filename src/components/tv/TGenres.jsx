@@ -7,7 +7,7 @@ function TGenres({setGenreId}) {
     const { data, load } = useMultiple(configuration.genres.genre + configuration.genres.tv)
 
     return (
-        <Genres data={data} load={load} setGenreId={setGenreId} />
+        <Genres data={data} load={load} setGenreId={setGenreId} act="tv"/>
     )
 }
 export default TGenres

@@ -8,10 +8,14 @@ function TList({ genreId }) {
 
     return (
         <>
-            <h1>{genreId}</h1>
 
             {
-                genreId === 0 ?
+
+                !load
+
+                    &&
+
+                    genreId == 0 || data.total_results == 0 ?
                     <All />
                     :
                     <List element={{ data, load }} />

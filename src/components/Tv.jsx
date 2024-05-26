@@ -1,15 +1,13 @@
+import { useParams } from "react-router-dom"
 import TGenres from "./tv/TGenres"
 import TList from "./tv/TList"
 
-import { useState } from "react"
-
 function Tv(){
-    const [genreId, setGenreId] = useState(0)
-
+    let {id} =useParams()
     return (
         <div className="container">
-            <TGenres setGenreId={setGenreId} />
-            <TList genreId={genreId}/>   
+            <TGenres/>
+            <TList genreId={id}/>   
         </div>
     )
 }

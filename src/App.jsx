@@ -22,9 +22,11 @@ function App() {
           <Route path="/" element={<Nav setTitle={setTitle}/>}>
 
             <Route index element={<Home />} />
-            <Route path="/movies" element={<Movies />} />
-            
-            <Route path="/tv" element={<Tv/>} />
+            <Route path="/movies/:id" element={<Movies />} />
+
+            {/* <Route path="/action/:id" element={<Test/>}/> */}
+
+            <Route path="/tv/:id" element={<Tv/>} />
             <Route path="/fav" element={<Fav />} />
 
             <Route path="/more/:action" element={<More/>}/>

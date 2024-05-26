@@ -1,16 +1,14 @@
+import { useParams } from "react-router-dom"
 import MGenres from "./movies/MGenres"
-// import MList from "./movies/MList"
 import MList from "./movies/MList"
 
-import { useState } from "react"
 
 function Movies(){
-    const [genreId, setGenreId] = useState(0)
-
+    const {id} = useParams()
     return (
         <div className="container">
-            <MGenres setGenreId={setGenreId} />
-            <MList genreId={genreId}/>   
+            <MGenres/>
+            <MList genreId={id}/>   
         </div>
     )
 }
