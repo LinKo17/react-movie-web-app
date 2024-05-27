@@ -60,8 +60,7 @@ function Poster() {
 
                                         <SwiperSlide key={element.id}>
 
-                                            <div className="image-container">
-                                                <img src={configuration.image.original + element.backdrop_path} />
+                                            <div className="image-container" style={{ backgroundImage: `url(${configuration.image.original + element.backdrop_path})` }}>
                                             </div>
 
                                             <div className="post_word">
@@ -86,11 +85,17 @@ function Poster() {
 
                                                 </div>
 
-                                                <div className="overview-container mb-4">
-                                                    <p>{element.overview}</p>
-                                                </div>
+                                                {
+                                                    element.overview &&
 
-                                                <ButtonContainer id={element.id} title={element.title} />
+                                                    <div className="overview-container mb-4">
+                                                        <p>{element.overview}</p>
+                                                    </div>
+                                                }
+
+                                                <div className="mt-1">
+                                                    <ButtonContainer id={element.id} title={element.title} />
+                                                </div>
 
                                             </div>
                                         </SwiperSlide>

@@ -16,11 +16,6 @@ function Card(props) {
         <Link to={`/${element.id}/${element.title || element.name}`} className="card-link">
 
             {
-                element.poster_path == null ?
-
-                ""
-
-                :
                 
                 <div className="card-box">
 

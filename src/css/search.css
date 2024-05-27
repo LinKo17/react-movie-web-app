@@ -33,12 +33,13 @@
     top:5px;
 }
 .fou-con{
-    font-size:120px;
+    font-size:100px;
     display: flex;
     justify-content: center;
     margin-top:50px;
     opacity: 0.2;
 }
+
 @media(max-width:340px){
 
     .input-container div input{

@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
 import { useState } from "react"
 
 import useMultiple from "../custom/useMultiple"
@@ -11,6 +11,7 @@ import "../css/search.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import SResult from "./search/SResult"
 
 
 function Search() {
@@ -21,7 +22,7 @@ function Search() {
     function formData(e) {
         e.preventDefault()
         let currentValue = dataRef.current.value
-        if( currentValue.length == 0){
+        if (currentValue.length == 0) {
             return
         }
 
@@ -31,10 +32,19 @@ function Search() {
 
     const { data, load } = useMultiple(configuration.search + result, result)
 
-    console.log(data)
+    const [chData, setChData] = useState([])
+
+    useEffect(() => {
+        if (!load) {
+            const res = data.results.filter(e => e.media_type != "person")
+            console.log(res)
+            setChData({ ...data, results: res })
+        }
+    }, [data])
 
     return (
         <div className="container">
+
             <div className="input-container">
                 <div>
                     <form onSubmit={formData}>
@@ -46,28 +56,41 @@ function Search() {
                 </div>
             </div>
 
-            <div>
-                {
-                    load ?
+            {
+                result == ""
 
-                        <div className="loading-style" >
-                            <Loading />
-                        </div>
-                        :
+                    ?
 
-                        <>
-                            {
-                                data.results.length == 0
-                                    ?
-                                    <div className="fou-con">
-                                        <FontAwesomeIcon icon={faSearch}/>
-                                    </div>
-                                    :
-                                    <List element={{ data, load }} />
-                            }
-                        </>
-                }
-            </div>
+                    <div className="fou-con">
+                        <h1>Enjoy</h1>
+                    </div>
+
+                    :
+
+                    !load &&
+
+                    <>
+                        {
+
+                            data.results.length != 0
+                                ?
+                                <List element={{ data: chData, load }} />
+                                :
+
+                                // <div className="fou-con">
+                                //     <h2>
+                                //         No results found for "{result.length > 15 ? result.substring(0, 15) + "..." : result}".
+                                //     </h2>
+
+                                // </div>
+
+                                <div className="loading-style" >
+                                    <Loading />
+                                </div>
+                        }
+                    </>
+
+            }
 
         </div>
     )
