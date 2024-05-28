@@ -1,95 +1,92 @@
-import { useEffect, useRef } from "react"
-import { useState } from "react"
-
-import useMultiple from "../custom/useMultiple"
-import configuration from "../config/configuration"
-
-import Loading from "./Loading"
-import List from "./main/List"
-
-import "../css/search.css"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import SResult from "./search/SResult"
+
+import "../css/search.css"
+import { useParams, useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react"
+import useMultiple from "../custom/useMultiple"
+import configuration from "../config/configuration"
+import List from "./main/List"
+import Loading from "./Loading"
 
 
 function Search() {
+    const { result } = useParams()
+    const [value, setValue] = useState(result)
+    let navigate = useNavigate()
 
-    const [result, setResult] = useState("")
-    const dataRef = useRef()
+    const [filterType, setFilterType] = useState(null)
 
     function formData(e) {
         e.preventDefault()
-        let currentValue = dataRef.current.value
-        if (currentValue.length == 0) {
+
+        if (value.length <= 0 || value == "...") {
+            // navigate(`/search/result/...`)
             return
         }
-
-        setResult(currentValue)
-        // dataRef.current.value = " "
+        navigate(`/search/result/${value}`)
     }
 
-    const { data, load } = useMultiple(configuration.search + result, result)
 
-    const [chData, setChData] = useState([])
+    let { data, load } = useMultiple(configuration.search + result, result)
 
+    // console.log(data)
     useEffect(() => {
+
         if (!load) {
-            const res = data.results.filter(e => e.media_type != "person")
-            console.log(res)
-            setChData({ ...data, results: res })
+            let firstRes = data.results.filter(e => e.media_type != "person")
+            let secondRes = firstRes.filter(e => e.poster_path != null)
+            setFilterType({ ...data, results: secondRes })
+            console.log(filterType)
         }
+
     }, [data])
+
+    console.log(result)
+
+    useEffect(() =>{
+        setValue(result)
+    },[result])
 
     return (
         <div className="container">
 
             <div className="input-container">
+
                 <div>
                     <form onSubmit={formData}>
-                        <input type="text" ref={dataRef} />
+
+                        <input type="text" value={value == "..." ? "" : value} onChange={e => setValue(e.target.value)} />
+
                         <button>
                             <FontAwesomeIcon icon={faSearch} />
                         </button>
+
                     </form>
                 </div>
+
             </div>
 
             {
-                result == ""
+                !load &&
+
+                    result == "..."
 
                     ?
 
-                    <div className="fou-con">
-                        <h1>Enjoy</h1>
-                    </div>
+                    <div className="fou-con">Search & Enjoy</div>
 
                     :
 
-                    !load &&
+                    filterType != null &&
 
-                    <>
-                        {
+                        filterType.results.length > 0 ?
+                        <List element={{ data: filterType, load }} />
+                        :
 
-                            data.results.length != 0
-                                ?
-                                <List element={{ data: chData, load }} />
-                                :
-
-                                // <div className="fou-con">
-                                //     <h2>
-                                //         No results found for "{result.length > 15 ? result.substring(0, 15) + "..." : result}".
-                                //     </h2>
-
-                                // </div>
-
-                                <div className="loading-style" >
-                                    <Loading />
-                                </div>
-                        }
-                    </>
-
+                        <div className="loading-con">
+                            <Loading />
+                        </div>
             }
 
         </div>

@@ -16,7 +16,7 @@ function Card(props) {
         <Link to={`/${element.id}/${element.title || element.name}`} className="card-link">
 
             {
-                
+
                 <div className="card-box">
 
                     {
@@ -46,7 +46,10 @@ function Card(props) {
                             <img src={noposter} />
                     }
 
-                    <p style={{ textDecoration: "none" }}>{(element.title || element.name)}</p>
+                    <p style={{ textDecoration: "none" }}>
+                        {(element.title || element.name)}
+                    </p>
+
                 </div>
 
             }

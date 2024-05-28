@@ -33,11 +33,18 @@
     top:5px;
 }
 .fou-con{
-    font-size:100px;
+    font-size:20px;
     display: flex;
     justify-content: center;
     margin-top:50px;
+    align-items: center;
     opacity: 0.2;
+}
+.loading-con{
+    display: flex;
+    justify-content: center;
+    margin-top:100px;
+    align-items: center;
 }
 
 @media(max-width:340px){

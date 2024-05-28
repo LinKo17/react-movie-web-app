@@ -12,6 +12,7 @@ import More from "./components/More"
 import Search from "./components/Search"
 import { useState } from "react"
 
+
 function App() {
   let [title,setTitle] =  useState(null)//this is use to search movie using title from Nav.jsx file
   return (
@@ -24,13 +25,13 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/movies/:id" element={<Movies />} />
 
-            {/* <Route path="/action/:id" element={<Test/>}/> */}
 
             <Route path="/tv/:id" element={<Tv/>} />
             <Route path="/fav" element={<Fav />} />
 
             <Route path="/more/:action" element={<More/>}/>
-            <Route path="/search/" element={<Search/>}/>
+            {/* <Route path="/search" element={<Search/>}/> */}
+            <Route path="/search/result/:result" element={<Search/>}/>
 
           </Route>
           <Route path="/:id/:name" element={<Details/>}/>

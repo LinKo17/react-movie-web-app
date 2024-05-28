@@ -47,7 +47,7 @@ function Nav() {
 
                     <div className="icon-container">
 
-                        <Link to="/search/" className="search-box">
+                        <Link to="/search/result/..." className="search-box">
                             <FontAwesomeIcon icon={faSearch} />
                         </Link>
 
