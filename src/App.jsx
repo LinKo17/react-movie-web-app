@@ -11,33 +11,37 @@ import Details from "./components/Details"
 import More from "./components/More"
 import Search from "./components/Search"
 import { useState } from "react"
+import ScrollToTop from "./ScrollToTop"
 
 
 function App() {
-  let [title,setTitle] =  useState(null)//this is use to search movie using title from Nav.jsx file
+  let [title, setTitle] = useState(null)//this is use to search movie using title from Nav.jsx file
   return (
     <>
       <Router>
+        <ScrollToTop />
+
         <Routes>
 
-          <Route path="/" element={<Nav setTitle={setTitle}/>}>
+          <Route path="/" element={<Nav setTitle={setTitle} />}>
 
             <Route index element={<Home />} />
             <Route path="/movies/:id" element={<Movies />} />
 
 
-            <Route path="/tv/:id" element={<Tv/>} />
+            <Route path="/tv/:id" element={<Tv />} />
             <Route path="/fav" element={<Fav />} />
 
-            <Route path="/more/:action" element={<More/>}/>
+            <Route path="/more/:action" element={<More />} />
             {/* <Route path="/search" element={<Search/>}/> */}
-            <Route path="/search/result/:result" element={<Search/>}/>
+            <Route path="/search/result/:result" element={<Search />} />
 
           </Route>
-          <Route path="/:id/:name" element={<Details/>}/>
+          <Route path="/:id/:name" element={<Details />} />
           <Route path="*" element={<Error />} />
 
         </Routes>
+
       </Router>
     </>
   )

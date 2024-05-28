@@ -1,4 +1,5 @@
 import "../css/home.css"
+import Footer from "./Footer"
 
 import Poster from "./home/Poster"
 import TopRated from "./home/common/TopRated"
@@ -22,6 +23,7 @@ function Home() {
                 {/* <Upcoming/> */}
 
             </div>
+                <Footer/>
         </>
     )
 
