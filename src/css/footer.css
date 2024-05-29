@@ -23,6 +23,7 @@
     height: auto;
     padding:20px;
     padding-bottom: 30px;
+    user-select: none;
 }
 .footer-image{
     display: flex;
@@ -43,6 +44,9 @@
 }
 .footer-youtube{
     color:#FF0000;
+}
+.copy-right{
+    user-select: none;
 }
 @media(max-width:767px){
     .f-col{

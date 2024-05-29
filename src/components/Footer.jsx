@@ -88,7 +88,7 @@ function Footer() {
                 </div>
             </div>
 
-            <div className="text-center opacity-50 m-3">
+            <div className="text-center opacity-50 m-3 copy-right">
                 &copy; Copyright {currentYear} Nightflix
             </div>
 
