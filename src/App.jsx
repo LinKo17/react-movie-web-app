@@ -13,7 +13,6 @@ import Search from "./components/Search"
 import { useState } from "react"
 import ScrollToTop from "./ScrollToTop"
 
-
 function App() {
   let [title, setTitle] = useState(null)//this is use to search movie using title from Nav.jsx file
   return (
@@ -32,7 +31,7 @@ function App() {
             <Route path="/tv/:id" element={<Tv />} />
             <Route path="/fav" element={<Fav />} />
 
-            <Route path="/more/:action" element={<More />} />
+            <Route path="/more/:action/:pgId" element={<More />} />
             {/* <Route path="/search" element={<Search/>}/> */}
             <Route path="/search/result/:result" element={<Search />} />
 

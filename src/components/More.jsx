@@ -1,5 +1,5 @@
-import { useParams } from "react-router-dom"
-import { useState } from "react"
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
 
 import useMultiple from "../custom/useMultiple"
 import configuration from "../config/configuration"
@@ -13,13 +13,61 @@ import CardSkeleton from "./skeleton/CardSkeleton"
 //my css
 import "../css/more.css"
 import Footer from "./Footer"
+import useTTpage from "./main/useTTpage"
 
 
 function More() {
-    let { action } = useParams()
-    let [pageNum, setPageNum] = useState(1)
 
-    let { data, load } = useMultiple(`/${action}` + configuration.movies.top_rated + `&page=${pageNum}`, pageNum)
+    let { action, pgId } = useParams()
+    let navigator = useNavigate()
+    let [pageNum, setPageNum] = useState(pgId)
+    let pages = pgId == pageNum ? pageNum : pgId
+    let { data, load } = useMultiple(`/${action}` + configuration.movies.top_rated + `&page=${pages}`, pages)
+
+
+    useEffect(() => {
+        navigator(`/more/${action}/${pageNum}`)
+    }, [pageNum])
+
+    let [checkError, setCheckError] = useState(false)
+    let {length,time} = useTTpage(`/${action}` + configuration.movies.top_rated)
+
+
+    useEffect(() => {
+        const isValid = /^[1-9]\d*$/.test(pgId);
+
+        // if (!isValid) {
+        //     setCheckError(true)
+        // } else {
+
+        //     if(!loading  && length.total_pages >= pgId){
+        //         setCheckError(false)
+        //     }else{
+        //         setCheckError(true)
+        //     }
+        // }
+
+        if(!time){
+
+
+            if (!isValid) {
+                setCheckError(true)
+            } else {
+                              
+                if(length.total_pages >= pgId){
+                    setCheckError(false)
+                }else{
+                    setCheckError(true)
+                }
+
+            }
+
+        }else{
+            setCheckError(false)
+
+        }
+
+    }, [pgId,time])
 
     return (
         <>
@@ -27,15 +75,36 @@ function More() {
                 <div className="row">
                     {load ?
 
-                        <div className="more-grid">
-                            {Array.from({ length: 18 }).map((element, index) => {
-                                return (
-                                    <div className="more-grid-container my-2" key={index}>
-                                        <CardSkeleton />
-                                    </div>
-                                )
-                            })}
-                        </div>
+
+                        checkError ?
+
+                            <div style={{height : "35vh"}}>
+
+                                <h3>
+                                    No Result
+                                </h3>
+
+                                <div className="mt-3">
+                                    <Link to="/">
+                                        <button className="btn btn-primary">Home</button>
+                                    </Link>
+                                </div>
+
+                            </div>
+
+                            :
+
+                            <div className="more-grid">
+                                {Array.from({ length: 18 }).map((element, index) => {
+                                    return (
+                                        <div className="more-grid-container my-2" key={index}>
+                                            <CardSkeleton />
+                                        </div>
+                                    )
+                                })}
+                            </div>
+
+
 
                         :
                         <>
@@ -48,16 +117,17 @@ function More() {
                                     )
                                 })}
 
-                                {/* <input type="text" onChange={(e) => setPageNum(e.target.value)} value={pageNum} /> */}
+
                             </div>
-                            <Pagination element={{ data, load, pageNum, setPageNum }} />
+
+                            <Pagination element={{pageNum,setPageNum,data,load}}/>
 
                         </>
                     }
                 </div>
-            </div>
+            </div >
 
-            <Footer/>
+            <Footer />
         </>
     )
 }

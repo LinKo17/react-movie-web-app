@@ -16,7 +16,7 @@ function TopRatedTv() {
             <div className="d-flex justify-content-between mb-2">
                 <span>Top Rated Tv & Series</span>
 
-                <Link to={`/more/${"tv"}`} style={{color:"white",textDecoration:"none"}}>
+                <Link to={`/more/${"tv"}/1`} style={{color:"white",textDecoration:"none"}}>
                     <div className="pe-4">
                         More
                     </div>
