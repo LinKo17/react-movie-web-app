@@ -33,7 +33,7 @@ function App() {
 
             <Route path="/more/:action/:pgId" element={<More />} />
             {/* <Route path="/search" element={<Search/>}/> */}
-            <Route path="/search/result/:result" element={<Search />} />
+            <Route path="/search/result/:result/:pgId" element={<Search />} />
 
           </Route>
           <Route path="/:id/:name" element={<Details />} />

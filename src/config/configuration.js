@@ -55,6 +55,7 @@ const configuration  = {
        tv:"/tv/"
     },
     search :"/search/multi?language=en-US&query=",
+    m_search:"/search/movie?language=en-US&query=",
     actors :{
         movie: "/movie",
         tv: "/tv",
