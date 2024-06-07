@@ -4,7 +4,6 @@ import useMultiple from "../../custom/useMultiple"
 import List from "../main/List"
 import All from "./All"
 import { useEffect, useState } from "react"
-import useTTpage from "../main/useTTpage"
 import Pagination from "../main/Pagination"
 
 function TList({ genreId }) {

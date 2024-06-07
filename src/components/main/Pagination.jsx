@@ -37,7 +37,7 @@ function Pagination(props) {
                 {ttpage >= 2 && <li onClick={() => setPageNum(2)}>2</li>}
 
 
-                {ttpage >= 3 && <li onClick={() => setPageNum(3)}>3</li>}
+                {ttpage >= 3 && <li id="third_pagination" onClick={() => setPageNum(3)} >3</li>}
 
                 {ttpage > 1 &&
 
