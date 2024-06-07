@@ -71,12 +71,15 @@ function Poster() {
 
                                                 <div className="d-flex">
 
+                                                    {
+                                                        element.vote_average != 0 && !isNaN(element.vote_average) &&
 
-                                                    <RatingCircle
-                                                        rating={Math.round((element.vote_average / 10) * 100)}
-                                                        width={"50px"}
-                                                        height={"50px"}
-                                                    />
+                                                        <RatingCircle
+                                                            rating={Math.round((element.vote_average / 10) * 100)}
+                                                            width={"50px"}
+                                                            height={"50px"}
+                                                        />
+                                                    }
 
 
 

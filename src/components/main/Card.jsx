@@ -20,7 +20,7 @@ function Card(props) {
                 <div className="card-box">
 
                     {
-                        element.vote_average != 0 && !isNaN(element.vote_average) ?
+                        element.vote_average != 0 && !isNaN(element.vote_average) &&
 
                             <div className="rating-cyc-container">
                                 <RatingCircle
@@ -31,16 +31,12 @@ function Card(props) {
                                 />
                             </div>
 
-                            :
-
-                            ""
-
                     }
 
                     {
                         element.poster_path != null ?
 
-                            <img src={configuration.image.w_500 + element.poster_path} />
+                            <img src={configuration.image.w_500 + element.poster_path} id="card-image"/>
 
                             :
                             <img src={noposter} />
