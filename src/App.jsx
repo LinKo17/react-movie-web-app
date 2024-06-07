@@ -25,10 +25,10 @@ function App() {
           <Route path="/" element={<Nav setTitle={setTitle} />}>
 
             <Route index element={<Home />} />
-            <Route path="/movies/:id" element={<Movies />} />
+            <Route path="/movies/:id/:pgId" element={<Movies />} />
 
 
-            <Route path="/tv/:id" element={<Tv />} />
+            <Route path="/tv/:id/:pgId" element={<Tv />} />
             <Route path="/fav" element={<Fav />} />
 
             <Route path="/more/:action/:pgId" element={<More />} />

@@ -30,11 +30,11 @@ function Nav() {
                             </li>
 
                             <li className="menu-float p-4">
-                                <Link to="/movies/0" className=" active text-decoration-none menu-link">Movies</Link>
+                                <Link to="/movies/0/1" className=" active text-decoration-none menu-link">Movies</Link>
                             </li>
 
                             <li className="menu-float p-4">
-                                <Link to="/tv/0" className="active text-decoration-none menu-link">Tv</Link>
+                                <Link to="/tv/0/1" className="active text-decoration-none menu-link">Tv</Link>
                             </li>
 
                             <li className="menu-float p-4">
@@ -47,7 +47,7 @@ function Nav() {
 
                     <div className="icon-container">
 
-                        <Link to="/search/result/..." className="search-box">
+                        <Link to="/search/result/.../1" className="search-box">
                             <FontAwesomeIcon icon={faSearch} />
                         </Link>
 

@@ -30,7 +30,7 @@ function Genres(props) {
                     <div className="d-flex slider-over">
                         <div className="my-2">
                             <span className={` rounded py-1 px-2 ${ id == 0 || con ? "slider-active-tag" : "slider-tags"}`}>
-                                <Link to={`/${act}/${0}`}  className="slider-tags-link">
+                                <Link to={`/${act}/${0}/1`}  className="slider-tags-link">
                                     All
                                 </Link>
                             </span>
@@ -40,7 +40,7 @@ function Genres(props) {
                             data.genres.map(e => {
                                 return <div key={e.id} className="my-2">
                                     <span className={` rounded py-1 px-2 ${ id == e.id ? "slider-active-tag" : "slider-tags"}`}>
-                                        <Link to={`/${act}/${e.id}`} className="slider-tags-link">{e.name}</Link>
+                                        <Link to={`/${act}/${e.id}/1`} className="slider-tags-link">{e.name}</Link>
                                     </span>
                                 </div>
 
